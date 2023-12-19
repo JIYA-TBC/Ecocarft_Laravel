@@ -25,7 +25,7 @@
 
 
                 @if(Route::has('login'))
-                                @auth
+                                @auth 
                                     @if(Auth::user()->utype===1)
                                     <li class="menu-item menu-item-has-children parent" >
                                         <a title="My Account" href="#">My Account ({{Auth::user()->name}})<i class="fa fa-angle-down" aria-hidden="true"></i></a>

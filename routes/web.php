@@ -26,3 +26,5 @@ Route::get('/',[HomeController::class,'index']);
 Route::get('/about',[AboutController::class,'index'])->name('home.about');
 Route::get('/menu-pricing',[MenupriceController::class,'index'])->name('home.menu');
 Route::get('/contact',[ContactController::class,'index'])->name('home.contact');
+
+require __DIR__.'/authorization.php';

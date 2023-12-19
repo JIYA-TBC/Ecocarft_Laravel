@@ -310,6 +310,6 @@ h6,
 }
 
 .bg-img {
-    background: linear-gradient(rgba(43, 40, 37, .5), rgba(43, 40, 37, .5)), url(../img/bg.jpg) center center no-repeat;
+    background: linear-gradient(rgba(179, 239, 94, 0.5), rgba(91, 202, 36, 0.5)), url(../img/bg.jpg) center center no-repeat;
     background-size: cover;
 }
