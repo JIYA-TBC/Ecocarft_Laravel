@@ -5,6 +5,9 @@ use App\Http\Controllers\front\ContactController;
 use App\Http\Controllers\front\HomeController;
 use App\Http\Controllers\front\MenupriceController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -27,4 +30,15 @@ Route::get('/about',[AboutController::class,'index'])->name('home.about');
 Route::get('/menu-pricing',[MenupriceController::class,'index'])->name('home.menu');
 Route::get('/contact',[ContactController::class,'index'])->name('home.contact');
 
-require __DIR__.'/authorization.php';
+Route::middleware('guest')->group(function () {
+    Route::get('register', [RegisteredUserController::class, 'create'])
+                ->name('register');
+
+    Route::post('register', [RegisteredUserController::class, 'store']);
+    Route::get('login', [AuthenticatedSessionController::class, 'create'])
+                ->name('login');
+
+    Route::post('login', [AuthenticatedSessionController::class, 'store']);
+});
+
+// require __DIR__.'/authorization.php';
