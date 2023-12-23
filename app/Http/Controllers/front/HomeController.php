@@ -11,7 +11,7 @@ use App\Models\Cake;
 class HomeController extends Controller
 {
     public function index(){
-        $cakes = Product::orderBy('created_at','DESC')->get()->take(8);
-        return view('front.home',compact('cakes'));
+        $products = Product::orderBy('created_at','DESC')->get()->take(8);
+        return view('front.home',compact('products'));
     }
 }

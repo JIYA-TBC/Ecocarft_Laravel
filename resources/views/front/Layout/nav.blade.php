@@ -39,7 +39,7 @@
                                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">My Account ({{Auth::user()->name}})</a>
                                         <div class="dropdown-menu rounded-0 m-0">
                                             <a href="#" class="dropdown-item">User Profile</a>
-					                        <a class="dropdown-item" href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa fa-power -off"></i>Logout</a>
+					                        <a class="dropdown-item" href="{{ route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa fa-power -off"></i>Logout</a>
                                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                                 @csrf
                                             </form>

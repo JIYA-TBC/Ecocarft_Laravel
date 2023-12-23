@@ -9,7 +9,7 @@
                 <div class="col-lg-8 text-center text-lg-start">
                     <h1 class="font-secondary text-primary text-black mb-4 ">Crafting a Greener Tomorrow</h1>
                     <h1 class="display-1 text-uppercase text-white mb-4">EcoCraft Haven</h1>
-                    <!-- <h1 class="text-uppercase text-white">The Best Cake In London</h1> -->
+                    <!-- <h1 class="text-uppercase text-white">The Best Product In London</h1> -->
                     
                 </div>
             </div>
@@ -143,16 +143,16 @@
                 <div class="tab-content">
                     <div id="tab-1" class="tab-pane fade show p-0 active">
                         <div class="row g-3">
-                            @foreach($cakes as $cake)
+                            @foreach($products as $product)
                             <div class="col-lg-6">
                                 <div class="d-flex h-100">
                                     <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="{{asset('images')}}/{{$cake->image}}" alt="{{$cake->name}}" style="width: 150px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">£{{$cake->price}}</h4>
+                                        <img class="img-fluid" src="{{asset('images')}}/{{$product->image}}" alt="{{$product->name}}" style="width: 150px; height: 85px;">
+                                        <h4 class="bg-dark text-primary p-2 m-0">£{{$product->price}}</h4>
                                     </div>
                                     <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">{{$cake->name}}</h5>
-                                        <span>{{$cake->description}}</span>
+                                        <h5 class="text-uppercase">{{$product->name}}</h5>
+                                        <span>{{$product->description}}</span>
                                     </div>
                                 </div>
                             </div>
