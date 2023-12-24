@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-// use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\Blade;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -22,6 +22,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        // Blade::component('x-input-label', \App\View\Components\InputLabel::class);
+        // Blade::component('x-guest-layout', \App\View\Components\GuestLayout::class);
+        // Blade::component('x-auth-session-status', \App\View\Components\AppLayout::class);
         
         //
     }
