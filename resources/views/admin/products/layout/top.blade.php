@@ -36,7 +36,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto mx-lg-auto py-0">
-                <a href="/" class="nav-item nav-link active">Home</a>
+                <a href="/" class="nav-item nav-link">Home</a>
                 <a href="{{route('home.about')}}" class="nav-item nav-link">About Us</a>
                 <a href="{{route('home.menu')}}" class="nav-item nav-link">Menu & Pricing</a>
                 <a href="{{route('home.contact')}}" class="nav-item nav-link">Contact Us</a>
