@@ -7,9 +7,8 @@
         <div class="container py-5">
             <div class="row justify-content-start">
                 <div class="col-lg-8 text-center text-lg-start">
-                    <h1 class="font-secondary text-primary text-black mb-4 ">Crafting a Greener Tomorrow</h1>
+                    <h1 class="font-secondary text-black mb-4 ">Crafting a Greener Tomorrow</h1>
                     <h1 class="display-1 text-uppercase text-white mb-4">EcoCraft Haven</h1>
-                    <!-- <h1 class="text-uppercase text-white">The Best Product In London</h1> -->
                     
                 </div>
             </div>
@@ -17,65 +16,66 @@
     </div>
     <!-- Hero End -->
 
-
-    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content rounded-0">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Youtube Video</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <!-- 16:9 aspect ratio -->
-                <div class="ratio ratio-16x9">
-                    <iframe class="embed-responsive-item" src="{{asset('front/img/video.mp4')}}" id="video" allowfullscreen allowscriptaccess="always"
-                        allow="autoplay"></iframe>
+    <!-- About Start -->
+    <div class="container-fluid pt-5">
+    <div class="container">
+        <div class="section-title position-relative text-center mx-auto mb-5 pb-3" style="max-width: 600px;">
+            <h2 class="text-primary font-secondary">About Us</h2>
+            <h1 class="display-4 text-uppercase">Welcome To ECOCRAFT</h1>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#videoModal">
+                    Watch Video
+                </button>
+                <!-- Video Modal Starts -->
+                <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content rounded-0">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Youtube Video</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- 16:9 aspect ratio -->
+                                <div class="ratio ratio-16x9">
+                                    <!-- Replace the 'src' attribute with the actual URL of your video -->
+                                    <iframe class="embed-responsive-item" src="{{ asset('front/img/video.mp4') }}" allowfullscreen allowscriptaccess="always" allow="autoplay"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Video Modal End -->
+        </div>
+        <div class="row gx-5">
+        <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute w-100 h-100" src="{{asset('front/img/about.jpg')}}" style="object-fit: cover;">
+                    </div>
+                </div>
+            <div class="col-lg-6 pb-5">
+                <h4 class="mb-4">What are we ?.</h4>
+                <p class="mb-5">Ecocraft is a pioneering company committed to providing sustainable and eco-friendly products that align with the growing global movement towards environmental responsibility. Established with a vision to make a positive impact on the planet, Ecocraft has become a leading name in the industry, offering a diverse range of products designed to promote a greener and more sustainable lifestyle.</p>
+                <div class="row g-5">
+                    <div class="col-sm-6">
+                        <div class="d-flex align-items-center justify-content-center bg-primary border-inner mb-4" style="width: 90px; height: 90px;">
+                            <i class="fas fa-heartbeat fa-2x text-white"></i> <!-- Assuming you have FontAwesome icons -->
+                        </div>
+                        <h4 class="text-uppercase">100% Healthy</h4>
+                        <p class="mb-0">Choose Ecocraft for a healthier, more sustainable lifestyle.</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="d-flex align-items-center justify-content-center bg-primary border-inner mb-4" style="width: 90px; height: 90px;">
+                            <i class="fas fa-award fa-2x text-white"></i> <!-- Assuming you have FontAwesome icons -->
+                        </div>
+                        <h4 class="text-uppercase">Award Winning</h4>
+                        <p class="mb-0">Ecocraft is proud to have received prestigious awards for our commitment to sustainability, innovation, and excellence in the eco-friendly product industry.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<!-- About End -->
 
-    <!-- Video Modal End -->
-
-
-    <!-- About Start -->
-    <div class="container-fluid pt-5">
-        <div class="container">
-            <div class="section-title position-relative text-center mx-auto mb-5 pb-3" style="max-width: 600px;">
-                <h2 class="text-primary font-secondary ">About Us</h2>
-                <h1 class="display-4 text-uppercase">Welcome To ECOCRAFT</h1>
-            </div>
-            <div class="row gx-5">
-                <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 400px;">
-                    <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100" src="{{asset('front/img/about.jpg')}}" style="object-fit: cover;">
-                    </div>
-                </div>
-                <div class="col-lg-6 pb-5">
-                    <h4 class="mb-4">Tempor erat elitr rebum clita. Diam dolor diam ipsum erat lorem sed stet labore lorem sit clita duo</h4>
-                    <p class="mb-5">Tempor erat elitr at rebum at at clita. Diam dolor diam ipsum et tempor sit. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor eirmod magna dolore erat amet magna</p>
-                    <div class="row g-5">
-                        <div class="col-sm-6">
-                            <div class="d-flex align-items-center justify-content-center bg-primary border-inner mb-4" style="width: 90px; height: 90px;">
-                                <i class="fa fa-heartbeat fa-2x text-white"></i>
-                            </div>
-                            <h4 class="text-uppercase">100% Healthy</h4>
-                            <p class="mb-0">Labore justo vero ipsum sit clita erat lorem magna clita nonumy dolor magna dolor vero</p>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="d-flex align-items-center justify-content-center bg-primary border-inner mb-4" style="width: 90px; height: 90px;">
-                                <i class="fa fa-award fa-2x text-white"></i>
-                            </div>
-                            <h4 class="text-uppercase">Award Winning</h4>
-                            <p class="mb-0">Labore justo vero ipsum sit clita erat lorem magna clita nonumy dolor magna dolor vero</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- About End --> 
 
 
     <!-- Facts Start -->
@@ -89,7 +89,7 @@
                         </div>
                         <div class="ps-4">
                             <h6 class="text-primary text-uppercase">Our Experience</h6>
-                            <h1 class="display-5 text-white mb-0" data-toggle="counter-up">12345</h1>
+                            <h1 class="display-5 text-black mb-0" data-toggle="counter-up">2390</h1>
                         </div>
                     </div>
                 </div>
@@ -100,7 +100,7 @@
                         </div>
                         <div class="ps-4">
                             <h6 class="text-primary text-uppercase">sells</h6>
-                            <h1 class="display-5 text-white mb-0" data-toggle="counter-up">12345</h1>
+                            <h1 class="display-5 text-black mb-0" data-toggle="counter-up">6754</h1>
                         </div>
                     </div>
                 </div>
@@ -111,7 +111,7 @@
                         </div>
                         <div class="ps-4">
                             <h6 class="text-primary text-uppercase">Up cycled</h6>
-                            <h1 class="display-5 text-white mb-0" data-toggle="counter-up">12345</h1>
+                            <h1 class="display-5 text-black mb-0" data-toggle="counter-up">3490</h1>
                         </div>
                     </div>
                 </div>
@@ -122,7 +122,7 @@
                         </div>
                         <div class="ps-4">
                             <h6 class="text-primary text-uppercase">Happy Clients</h6>
-                            <h1 class="display-5 text-white mb-0" data-toggle="counter-up">12345</h1>
+                            <h1 class="display-5 text-black mb-0" data-toggle="counter-up">5509</h1>
                         </div>
                     </div>
                 </div>
@@ -131,40 +131,35 @@
     </div>
     <!-- Facts End -->
 
-
-    <!-- Products Start -->
-    <div class="container-fluid about py-5">
-        <div class="container">
-            <div class="section-title position-relative text-center mx-auto mb-5 pb-3" style="max-width: 600px;">
-                <h2 class="text-primary font-secondary">Menu & Pricing</h2>
-                <h1 class="display-4 text-uppercase">Explore Our Products</h1>
-            </div>
-            <div class="tab-class text-center">
-                <div class="tab-content">
-                    <div id="tab-1" class="tab-pane fade show p-0 active">
-                        <div class="row g-3">
-                            @foreach($products as $product)
-                            <div class="col-lg-6">
-                                <div class="d-flex h-100">
-                                    <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="{{asset('images')}}/{{$product->image}}" alt="{{$product->name}}" style="width: 150px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">£{{$product->price}}</h4>
-                                    </div>
-                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">{{$product->name}}</h5>
-                                        <span>{{$product->description}}</span>
-                                    </div>
+<!-- Products Start -->
+<div class="container-fluid about py-5">
+    <div class="container">
+        <div class="section-title position-relative text-center mx-auto mb-5 pb-3" style="max-width: 600px;">
+            <h2 class="text-primary font-secondary">Products & Pricing</h2>
+            <h1 class="display-4 text-uppercase">Explore Our Products</h1>
+        </div>
+        <div class="tab-class text-center">
+            <div class="tab-content">
+                <div id="tab-1" class="tab-pane fade show p-0 active">
+                    <div class="row g-3">
+                        <div class="col-lg-6">
+                            <div class="d-flex h-100" style="width: 80%;"> 
+                                <div class="flex-shrink-0">
+                                    <img class="img-fluid" src="{{ asset('front/img/img-1.jpg') }}" alt="happy" style="width: 150px; height: 85px;">
+                                    <h4 class="bg-dark text-primary p-2 m-0">£5</h4>
+                                </div>
+                                <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4" style="width: calc(100% - 150px);">
+                                    <h5 class="text-uppercase">ty</h5>
                                 </div>
                             </div>
-                            @endforeach
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Products End -->
-
+</div>
+<!-- Products End -->
 
     <!-- Service Start -->
     <div class="container-fluid service position-relative px-5 mt-5" style="margin-bottom: 135px;">
@@ -214,7 +209,8 @@
                         <div class="bg-dark border-inner text-center p-4">
                             <h4 class="text-uppercase text-primary mb-3">Mithila Arts</h4>
                             <div class="position-relative overflow-hidden">
-                                <img class="img-fluid w-100 h-200 rounded" src="front/img/img-1.jpg" alt="Art">
+                                <img class="rounded" src="front/img/img-1.jpg" alt="Art" style="width: 400px; height: 250px;">
+
                             </div>
                         </div>
                     </div>
@@ -224,7 +220,8 @@
                         <div class="bg-dark border-inner text-center p-4">
                             <h4 class="text-uppercase text-primary mb-3">Tea</h4>
                             <div class="position-relative overflow-hidden">
-                                <img class="img-fluid w-100 h-200 rounded" src="front/img/img-3.jpg" alt="Tea">
+                            <img class="rounded" src="front/img/img-3.jpg" alt="Tea" style="width: 400px; height: 250px;">
+
                             </div>
                         </div>
                     </div>
@@ -234,7 +231,9 @@
                         <div class="bg-dark border-inner text-center p-4">
                             <h4 class="text-uppercase text-primary mb-3">Skincare</h4>
                             <div class="position-relative overflow-hidden">
-                                <img class="img-fluid w-100 h-200 rounded" src="{{ asset('front/img/img-2.jpg') }}" alt="Skincare Image">
+                            <img class="rounded" src="front/img/img-2.jpg" alt="SKIN CARE" style="width: 400px; height: 250px;">
+
+                                <!-- <img class="img-fluid w-100 h-200 rounded" src="{{ asset('front/img/img-2.jpg') }}" alt="Skincare Image"> -->
                             </div>
                         </div>
                     </div>
@@ -261,64 +260,9 @@
             </div>
         </div>
     </div>
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <!-- Offer End -->
-
-
-    <!-- Testimonial Start -->
-    <div class="container-fluid py-5">
-        <div class="container">
-            <div class="section-title position-relative text-center mx-auto mb-5 pb-3" style="max-width: 600px;">
-                <h2 class="text-primary font-secondary">Testimonial</h2>
-                <h1 class="display-4 text-uppercase">Our Clients Say!!!</h1>
-            </div>
-            <div class="owl-carousel testimonial-carousel">
-                <div class="testimonial-item bg-dark text-white border-inner p-4">
-                    <div class="d-flex align-items-center mb-3">
-                        <img class="img-fluid flex-shrink-0" src="{{asset('front/img/testimonial-1.jpg')}}" style="width: 60px; height: 60px;">
-                        <div class="ps-3">
-                            <h4 class="text-primary text-uppercase mb-1">Client Name</h4>
-                            <span>Profession</span>
-                        </div>
-                    </div>
-                    <p class="mb-0">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam
-                    </p>
-                </div>
-                <div class="testimonial-item bg-dark text-white border-inner p-4">
-                    <div class="d-flex align-items-center mb-3">
-                        <img class="img-fluid flex-shrink-0" src="{{asset('front/img/testimonial-2.jpg')}}" style="width: 60px; height: 60px;">
-                        <div class="ps-3">
-                            <h4 class="text-primary text-uppercase mb-1">Jiya Yadav</h4>
-                            <span>IT</span>
-                        </div>
-                    </div>
-                    <p class="mb-0">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam
-                    </p>
-                </div>
-                <div class="testimonial-item bg-dark text-white border-inner p-4">
-                    <div class="d-flex align-items-center mb-3">
-                        <img class="img-fluid flex-shrink-0" src="{{asset('front/img/testimonial-3.jpg')}}" style="width: 60px; height: 60px;">
-                        <div class="ps-3">
-                            <h4 class="text-primary text-uppercase mb-1">Bidhusi Neupane</h4>
-                            <span>Doctor</span>
-                        </div>
-                    </div>
-                    <p class="mb-0">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam
-                    </p>
-                </div>
-                <div class="testimonial-item bg-dark text-white border-inner p-4">
-                    <div class="d-flex align-items-center mb-3">
-                        <img class="img-fluid flex-shrink-0" src="{{asset('front/img/testimonial-4.jpg')}}" style="width: 60px; height: 60px;">
-                        <div class="ps-3">
-                            <h4 class="text-primary text-uppercase mb-1">Kristina Queen</h4>
-                            <span>Engineer</span>
-                        </div>
-                    </div>
-                    <p class="mb-0">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Testimonial End -->
-
 @endsection

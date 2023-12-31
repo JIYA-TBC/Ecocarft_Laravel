@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head> 
-    @extends('front.layout.top')
+    <!-- @extends('front.layout.top') -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
-
 
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-0">
@@ -20,7 +20,7 @@
             <div class="navbar-nav ms-auto mx-lg-auto py-0">
                 <a href="/" class="nav-item nav-link active">Home</a>
                 <a href="{{route('home.about')}}" class="nav-item nav-link">About Us</a>
-                <a href="{{route('home.menu')}}" class="nav-item nav-link">Menu & Pricing</a>
+                <a href="{{route('home.menu')}}" class="nav-item nav-link">Product & Pricing</a>
                 <a href="{{route('home.contact')}}" class="nav-item nav-link">Contact Us</a>
 
 
@@ -61,19 +61,14 @@
             </div>
         </div>
     </nav>
-    <!-- Navbar End -->
+    <!-- Navbar End -->   
 
     @yield('content')
-    
-
     @extends('front.layout.footer')
-
+    @extends('front.layout.test')
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-primary border-inner py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
-
-
     @extends('front.layout.bottom')
 </body>
-
 </html>
