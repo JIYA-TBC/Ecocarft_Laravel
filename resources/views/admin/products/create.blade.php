@@ -47,7 +47,18 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Price:</strong>
+                <strong>Category:</strong>
+                <select name="category" class="form-control">
+                    <option value="Food">Food</option>
+                    <option value="Skin Care">Skin Care</option>
+                    <option value="Art">Art</option>
+                    <option value="Hair Care">Hair Care</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Image:</strong>
                 <input type="file" name="image" class="form-control" >
             </div>
         </div>

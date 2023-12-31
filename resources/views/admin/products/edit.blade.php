@@ -46,11 +46,29 @@
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Image:</strong>
-                <input type="file" name="image" class="form-control" >
-            </div>
-        </div>
+    <div class="form-group">
+        <strong>Category:</strong>
+        <select name="category" class="form-control">
+            <option value="Food" @if($product->category == 'Food') selected @endif>Food</option>
+            <option value="Skin Care" @if($product->category == 'Skin Care') selected @endif>Skin Care</option>
+            <option value="Art" @if($product->category == 'Art') selected @endif>Art</option>
+            <option value="Hair Care" @if($product->category == 'Hair Care') selected @endif>Hair Care</option>
+        </select>
+    </div>
+</div>
+
+<div class="col-xs-12 col-sm-12 col-md-12">
+    <div class="form-group">
+        <strong>Image:</strong>
+        @if($product->image)
+            <img src="{{ asset('path/to/your/images/' . $product->image) }}" value="{{$product->image}}" alt="" style="max-width: 100px; max-height: 100px;">
+        @else
+            <p>No previous image available</p>
+        @endif
+        <input type="file" name="image" class="form-control">
+    </div>
+</div>
+
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="btn btn-primary">Submit</button>
         </div>

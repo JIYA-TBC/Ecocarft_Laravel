@@ -1,5 +1,7 @@
 @extends('admin.products.layout')
- 
+
+@extends('admin.products.layout.top')
+
 @section('content')
     <div class="row" style="margin-top: 5rem;">
     <div class="col-lg-4 margin-tb">
@@ -24,6 +26,9 @@
             <th>Name</th>
             <th>Description</th>
             <th>Price</th>
+            <th>Category</th>
+            
+            <th width="280px">Action</th>
         </tr>
         @foreach ($products as $key => $value)
         <tr>
@@ -31,7 +36,18 @@
             <td>{{ $value->name }}</td>
             <td>{{ \Str::limit($value->description, 100) }}</td>
             <td>{{ $value->price }}</td>
+            <td>{{ $value->category }}</td>
+            <td>
+                <form action="{{ route('products.destroy',$value->id) }}" method="POST">     
+                    <a class="btn btn-primary" href="{{route('products.edit',$value->id)}}">Edit</a>   
+                    @csrf
+                    @method('DELETE')      
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </td>
         </tr>
         @endforeach
     </table>  
 @endsection
+
+

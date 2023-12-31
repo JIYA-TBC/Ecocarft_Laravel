@@ -54,6 +54,7 @@ class ProductController extends Controller
         $products->name = $request->name;
         $products->description = $request->description;
         $products->price = $request->price;
+        $products->category = $request->category;
         $imageName = Carbon::now()->timestamp. '.' . $request->image->extension();
         $request->image->move(public_path('images'), $imageName);
         $products->image = $imageName;
@@ -65,8 +66,13 @@ class ProductController extends Controller
     public function search()
     {
         $search_text = $_GET['query'];
-        $products = Product::where('name','LIKE','%'.$search_text.'%')->get();
-        return view('admin.products.search',compact('products'));
+        $products = Product::where('name', 'LIKE', '%' . $search_text . '%')
+            ->orWhere('description', 'LIKE', '%' . $search_text . '%')
+            ->orWhere('category', 'LIKE', '%' . $search_text . '%')
+            ->get();
+
+        return view('admin.products.search', compact('products'));
+
     }
 
     /**
@@ -91,6 +97,8 @@ class ProductController extends Controller
         return view('admin.products.edit',compact('product'));
     }
 
+ 
+
     /**
      * Update the specified resource in storage.
      *
@@ -111,6 +119,7 @@ class ProductController extends Controller
         $products->name = $request->name;
         $products->description = $request->description;
         $products->price = $request->price;
+        $products->category = $request->category;
         $imageName = Carbon::now()->timestamp. '.' . $request->image->extension();
         $request->image->move(public_path('images'), $imageName);
         $products->image = $imageName;
