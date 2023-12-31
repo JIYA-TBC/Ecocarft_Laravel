@@ -20,7 +20,8 @@ return new class extends Migration
             $table->text('description');
             $table->float('pages');
             $table->string('image');
-            $table->string('category')->default('natural');
+            // $table->string('category')->default('natural');
+            $table->string('category');
             $table->timestamps();
         });
     }
