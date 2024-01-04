@@ -7,21 +7,20 @@
         <title>Laravel</title>
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair:wght@400;600;700&display=swap">
 
         <!-- Scripts -->
-        <link rel="stylesheet" href="{{ asset('build/assets/app-f52d8432.css') }}" />
+        <link rel="stylesheet" href="{{ asset('build/assets/app-f52d8432.css')}}" />
         <script type="module" src="{{ asset('build/assets/app-113fdd3a.js') }}"></script>
 
-        <link rel="stylesheet" href="http://your-laravel-app.com/build/assets/app-f52d8432.css" />
-        <script type="module" src="http://your-laravel-app.com/build/assets/app-113fdd3a.js"></script>
-
-
+        
+        <!-- Template Stylesheet -->
+        <link href="{{asset('front/css/style.css')}}" rel="stylesheet">
     </head>
-    <body class="font-sans text-gray-900 antialiased">
-        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
+    <body >
+        <div id="registerdiv" class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
             <div>
-                <img src="{{ asset('front/img/logouser2.png') }}">
+                <img style="height: 100px; width: 100px;" src="{{ asset('front/img/logo.png') }}">
             </div>
 
             <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">

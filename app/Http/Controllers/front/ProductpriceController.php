@@ -27,4 +27,9 @@ class ProductpriceController extends Controller
 
         return view('front.product-pricing', compact('products'));
     }
+    public function showDetails($id)
+    {
+        $product = Product::findOrFail($id);
+        return view('front.product-details', compact('product'));
+    }
 }

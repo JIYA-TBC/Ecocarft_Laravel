@@ -5,6 +5,8 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Blade;
 
+use App\View\Components\ApplicationLogo;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -25,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
         // Blade::component('x-input-label', \App\View\Components\InputLabel::class);
         // Blade::component('x-guest-layout', \App\View\Components\GuestLayout::class);
         // Blade::component('x-auth-session-status', \App\View\Components\AppLayout::class);
-        
+        Blade::component('application-logo', ApplicationLogo::class);
         //
     }
 }

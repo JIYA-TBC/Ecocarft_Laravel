@@ -3,8 +3,11 @@
 @section('content')
 
 <!-- Add Bootstrap CSS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
 
+<!-- Template Stylesheet -->
+<link href="{{asset('front/css/bootstrap.min.css')}}" rel="stylesheet">
+    
 <!-- Add Bootstrap JS and Popper.js -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -48,9 +51,8 @@
     </div>
     <!-- Page Header End -->
 
-    <!-- Sorting form -->
 <!-- Sorting form -->
-<form class="form-inline mb-4" action="{{ route('home.menu') }}" method="GET">
+<form class="form-inline mb-4 " action="{{ route('home.menu') }}" method="GET">
     <div class="form-group mx-sm-3">
         <label for="sort" class="mr-2">Sort by:</label>
         <select class="form-control" name="sort" id="sort" onchange="this.form.submit()">
@@ -72,7 +74,8 @@
                         <p class="card-title text-uppercase text-center" style="font-size: 2rem; font-family: 'YourFont', sans-serif;">£{{ $product->price }}</p>
                         <p>
                             <a href="#" style="font-size: 1rem; font-family: 'YourFont', sans-serif;" class="btn text-uppercase float-left text-dark">Add to Cart</a>
-                            <a href="#" style="font-size: 1rem; font-family: 'YourFont', sans-serif;" class="btn text-uppercase float-right text-dark">Details</a>
+                            <a href="{{ route('product.details', ['id' => $product->id]) }}" class="btn text-uppercase float-right text-dark">Details</a>
+
                         </p>
                     </div>
                 </div>

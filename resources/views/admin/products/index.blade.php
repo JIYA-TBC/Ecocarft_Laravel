@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>ECOCRAFT</title>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css"> -->
     <!-- Font Awesome (for icons) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <style>
+
+    <!-- Template Stylesheet -->
+    <link href="{{asset('front/css/bootstrap.min.css')}}" rel="stylesheet">
+    <!-- <style>
         .sidebar {
             height: 100vh;
         }
@@ -22,7 +25,7 @@
         .main-content {
             margin-top: 5rem;
         }
-    </style>
+    </style> -->
 </head>
 <body>
 
@@ -34,7 +37,7 @@
         <nav class="col-md-2 d-none d-md-block bg-dark sidebar">
             <div class="sidebar-sticky">
                 <!-- Brand -->
-                <a href="index.html" class="text-white">
+                <a href="/" class="text-white">
                     <h1 class="m-0 text-uppercase"><i class="fa fa-leaf fs-1 text-success me-3"></i>ECOCRAFT</h1>
                 </a>
                 <hr class="text-white">
@@ -110,7 +113,7 @@
                     </tr>
                 @endforeach
             </table>
-            {!! $products->links() !!}
+            {{ $products->links() }}
         </main>
         <!-- Main Content End -->
 

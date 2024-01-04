@@ -200,6 +200,7 @@ h6,
     padding: 0px;
 }
 
+
 #videoModal .close {
     position: absolute;
     width: 30px;
@@ -310,6 +311,46 @@ h6,
 }
 
 .bg-img {
-    background: linear-gradient(rgba(179, 239, 94, 0.5), rgba(91, 202, 36, 0.5)), url(../img/bg.jpg) center center no-repeat;
+    background: linear-gradient(rgba(179, 239, 94, 0.5), rgba(91, 202, 36, 0.5)), url(../img/bg-1.jpg) center center no-repeat;
     background-size: cover;
+}
+
+
+#logindiv {
+    background: url(../img/bgg.jpg) no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    font-family: 'Playfair', sans-serif; 
+    }
+
+#registerdiv {
+        background: url(../img/bg.jpg) no-repeat center center fixed;
+        background-size: cover;
+        margin: 0;
+        font-family: 'Playfair', sans-serif; 
+        }
+/* pagination.css */
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    list-style: none;
+}
+
+.pagination > li {
+    margin: 0 5px;
+    display: inline-block;
+}
+
+.pagination > li > span, .pagination > li > a {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-decoration: none;
+    color: #333;
+}
+
+.pagination > .active > span, .pagination > .active > a {
+    background-color: #007BFF;
+    color: #fff;
 }

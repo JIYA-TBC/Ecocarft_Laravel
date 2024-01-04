@@ -21,8 +21,6 @@ class ProductController extends Controller
         return response()->view('admin.products.index', compact('products'));
     }
 
-
-
     /**
      * Show the form for creating a new resource.
      *

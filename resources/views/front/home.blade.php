@@ -2,6 +2,13 @@
 
 @section('content')
 
+<!-- @if(session('status'))
+    <div class="alert alert-danger">
+        {{ session('status') }}
+    </div>
+@endif -->
+
+
 <!-- Hero Start -->
 <div class="container-fluid bg-primary py-5 mb-5 hero-header">
         <div class="container py-5">
