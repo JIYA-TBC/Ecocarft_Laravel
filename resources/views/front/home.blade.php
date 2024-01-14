@@ -1,5 +1,4 @@
 @extends('front.master')
-
 @section('content')
 
 <!-- @if(session('status'))
@@ -10,21 +9,21 @@
 
 
 <!-- Hero Start -->
-<div class="container-fluid bg-primary py-5 mb-5 hero-header">
-        <div class="container py-5">
-            <div class="row justify-content-start">
-                <div class="col-lg-8 text-center text-lg-start">
-                    <h1 class="font-secondary text-black mb-4 ">Crafting a Greener Tomorrow</h1>
-                    <h1 class="display-1 text-uppercase text-white mb-4">EcoCraft Haven</h1>
-                    
-                </div>
+<div class="container-fluid py-5 mb-5 hero-header" style="background-image: url('front/img/home2.jpg'); background-size: cover; background-position: center;">
+    <div class="container py-5">
+        <div class="row justify-content-start">
+            <div class="col-lg-8 text-center text-lg-start">
+                <h1 class="font-secondary text-white mb-4 ">Crafting a Greener Tomorrow</h1>
+                <h1 class="display-1 text-uppercase text-white mb-4">EcoCraft Haven</h1>
             </div>
         </div>
     </div>
+</div>
+
     <!-- Hero End -->
 
     <!-- About Start -->
-    <div class="container-fluid pt-5">
+<div class="container-fluid pt-5">
     <div class="container">
         <div class="section-title position-relative text-center mx-auto mb-5 pb-3" style="max-width: 600px;">
             <h2 class="text-primary font-secondary">About Us</h2>
@@ -42,7 +41,7 @@
                             </div>
                             <div class="modal-body">
                                 <!-- 16:9 aspect ratio -->
-                                <div class="ratio ratio-16x9">
+                                <div class="ratio ratio-16x9" >
                                     <!-- Replace the 'src' attribute with the actual URL of your video -->
                                     <iframe class="embed-responsive-item" src="{{ asset('front/img/video.mp4') }}" allowfullscreen allowscriptaccess="always" allow="autoplay"></iframe>
                                 </div>
@@ -55,7 +54,7 @@
         <div class="row gx-5">
         <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100" src="{{asset('front/img/about.jpg')}}" style="object-fit: cover;">
+                        <img class="position-absolute w-100 h-100" src="{{asset('front/img/about1.jpg')}}" style="object-fit: cover;">
                     </div>
                 </div>
             <div class="col-lg-6 pb-5">
@@ -139,7 +138,7 @@
     <!-- Facts End -->
 
 <!-- Products Start -->
-<div class="container-fluid about py-5">
+<!-- <div class="container-fluid about py-5">
     <div class="container">
         <div class="section-title position-relative text-center mx-auto mb-5 pb-3" style="max-width: 600px;">
             <h2 class="text-primary font-secondary">Products & Pricing</h2>
@@ -165,7 +164,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- Products End -->
 
     <!-- Service Start -->
@@ -267,6 +266,7 @@
             </div>
         </div>
     </div>
+  
 <!-- Bootstrap JS and dependencies -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>

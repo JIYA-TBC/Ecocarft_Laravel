@@ -20,8 +20,10 @@
             <div class="navbar-nav ms-auto mx-lg-auto py-0">
                 <a href="/" class="nav-item nav-link active">Home</a>
                 <a href="{{route('home.about')}}" class="nav-item nav-link">About Us</a>
-                <a href="{{route('home.menu')}}" class="nav-item nav-link">Product & Pricing</a>
+                <a href="{{route('home.product')}}" class="nav-item nav-link">Product & Pricing</a>
                 <a href="{{route('home.contact')}}" class="nav-item nav-link">Contact Us</a>
+                <a href="{{route('home.testimonial')}}" class="nav-item nav-link">Testimonials</a>
+
 
 
                 @if(Route::has('login'))
@@ -65,8 +67,8 @@
 
     @yield('content')
     @extends('front.layout.footer')
-    @extends('front.layout.test')
-
+    
+    
     <!-- Back to Top -->
     <a href="#" class="btn btn-primary border-inner py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
     @extends('front.layout.bottom')

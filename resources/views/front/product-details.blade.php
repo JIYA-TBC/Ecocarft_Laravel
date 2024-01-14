@@ -12,6 +12,15 @@
                         <p class="text-center">
                             <a href="#" class="btn btn-primary">Add to Cart</a>
                         </p>
+
+                        
+                        <form action="{{ route('payment')}}" method="post">
+                                @csrf
+                                <input type="hidden" name="amount" id="amount{{ $product->price }}" value="{{ $product->price }}">
+                     
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                                
+                            </form>
                     </div>
                 </div>
             </div>

@@ -11,14 +11,14 @@
                 <a href="index.html" class="nav-item nav-link active">Home</a>
                 <a href="about.html" class="nav-item nav-link">About Us</a>
                 <a href="menu.html" class="nav-item nav-link">Menu & Pricing</a>
-                <a href="team.html" class="nav-item nav-link">Master Chefs</a>
-                <div class="nav-item dropdown">
+                <!-- <a href="team.html" class="nav-item nav-link">Master Chefs</a> -->
+                <!-- <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu m-0">
-                        <a href="service.html" class="dropdown-item">Our Service</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                    </div>
-                </div>
+                    <div class="dropdown-menu m-0"> -->
+                        <!-- <a href="service.html" class="dropdown-item">Our Service</a>
+                        <a href="testimonial.html" class="dropdown-item">Testimonial</a> -->
+                    <!-- </div> -->
+                <!-- </div> -->
 
                 
                 @if(Route::has('login'))
