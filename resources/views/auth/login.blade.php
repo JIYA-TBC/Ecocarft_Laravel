@@ -75,7 +75,7 @@
                     </x-primary-button>
                     
                     <a class="underline text-sm text-black-600 hover:text-grey-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('register') }}">
-                        {{ __('Sign in') }}
+                        {{ __('Sign up') }}
                     </a>
 
                 </div>

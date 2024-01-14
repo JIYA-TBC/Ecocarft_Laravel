@@ -11,25 +11,45 @@ class ProductpriceController extends Controller
     public function index(Request $request)
     {
         // Check if a sorting preference is specified in the request
-        if ($request->has('sort')) {
-            // Get the sorting preference from the request
-            $sort = $request->input('sort');
-            // Validate the sorting preference (optional)
-            $validSorts = ['asc', 'desc'];
-            $sort = in_array($sort, $validSorts) ? $sort : 'asc';
-        } else {
-            // Default to ascending order if no sorting preference is specified
-            $sort = 'asc';
+        $sort = $request->input('sort', 'asc'); // Default to ascending order
+    
+        // Fetch products without applying sorting or filtering
+        $products = Product::query();
+    
+        // Check if a category filter is specified in the request
+        $category = $request->filled('category') ? $request->input('category') : null;
+    
+        // Add a where clause to filter products by category if not null
+        if (!is_null($category)) {
+            $products->where('category', $category);
         }
-
+    
         // Fetch products based on the sorting preference
-        $products = Product::orderBy('price', $sort)->paginate(6);
-
+        $products = $products->orderBy('price', $sort);
+    
+        // Paginate the results
+        $products = $products->paginate(6);
+    
         return view('front.product-pricing', compact('products'));
     }
-    public function showDetails($id)
+    
+
+    public function show($id)
     {
-        $product = Product::findOrFail($id);
-        return view('front.product-details', compact('product'));
+        $product = Product::find($id);
+
+        return view('front.show', ['product' => $product]);
     }
+
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+
+        $products = Product::where('name', 'like', "%$query%")
+                           ->orWhere('description', 'like', "%$query%")
+                           ->get();
+
+        return view('front.search', compact('products'));
+    }
+
 }

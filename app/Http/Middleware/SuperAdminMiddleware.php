@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Auth;
 
-class AdminMiddleware
+class SuperAdminMiddleware
 {
     /**
      * Handle an incoming request.
@@ -18,13 +18,13 @@ class AdminMiddleware
     public function handle(Request $request, Closure $next)
     {
         if(Auth::check()){
-            if(Auth::user()->utype == 1 || Auth::user()->utype == 2) // 1 for admin and 0 for user
+            if(Auth::user()->utype == 2) // 1 for admin and 0 for user and 2 for superadmin
             {
                 return $next($request);
             } 
             else
             {
-                return redirect('/');
+                return redirect('/errors/404')->with('status','Access Denied! As you are not admin');
             }
         }
         else

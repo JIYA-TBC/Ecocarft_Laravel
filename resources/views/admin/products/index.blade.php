@@ -4,63 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>ECOCRAFT</title>
-    <!-- Bootstrap CSS -->
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css"> -->
-    <!-- Font Awesome (for icons) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
-    <!-- Template Stylesheet -->
-    <link href="{{asset('front/css/bootstrap.min.css')}}" rel="stylesheet">
-    <!-- <style>
-        .sidebar {
-            height: 100vh;
+    <!-- @extends('front.layout.top') -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
         }
 
-        .sidebar-sticky {
-            position: fixed;
-            width: 220px;
-            padding: 20px;
-        }
-
-        .main-content {
+        .row {
             margin-top: 5rem;
+            padding: 20px;
+            background-image: url('/front/img/bg.jpg');
+    background-size: cover; 
+    background-position: center; 
         }
-    </style> -->
+    </style>
 </head>
 <body>
 
-<!-- Container for Sidebar and Content -->
+<!-- Navigation Bar -->
+
+
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a href="index.html" class="navbar-brand">
+            <h1 class="m-0 text-uppercase text-white"><i class="fa fa-leaf fs-1 text-success me-3"></i>ECOCRAFT</h1>
+        </a>
+        
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto mx-lg-auto py-0">
+                <a href="/" class="nav-item nav-link active">Home</a>
+                <a href="{{route('superadmin.users')}}"class="nav-item nav-link">Manage</a>
+                
+                <a href="{{route('home.product')}}" class="nav-item nav-link">Product & Pricing</a>
+                <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <i class="fa fa-power-off"></i> Logout
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+        </div>
+    </div>
+</nav>
 <div class="container-fluid">
     <div class="row">
 
-        <!-- Sidebar Start -->
-        <nav class="col-md-2 d-none d-md-block bg-dark sidebar">
-            <div class="sidebar-sticky">
-                <!-- Brand -->
-                <a href="/" class="text-white">
-                    <h1 class="m-0 text-uppercase"><i class="fa fa-leaf fs-1 text-success me-3"></i>ECOCRAFT</h1>
-                </a>
-                <hr class="text-white">
-
-                <!-- Dashboard Link -->
-                <a href="dashboard.html" class="text-white">
-                    <h5 class="m-0 text-uppercase">Dashboard</h5>
-                </a>
-                <hr class="text-white">
-
-                <!-- Logout Link -->
-                <a class="text-white" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                    <i class="fa fa-power-off"></i> Logout
-                </a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                    @csrf
-                </form>
-            </div>
-        </nav>
-        <!-- Sidebar End -->
-
-        <!-- Main Content Start -->
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 main-content">
+ <!-- Main Content Start -->
+ <main role="main" class="col-md-9 ml-sm-auto col-lg-10 main-content">
             <div class="row" style="margin-top: 5rem;">
                 <div class="col-lg-4 margin-tb">
                     <form type="get" action="{{url('/admin/productsearch')}}">
@@ -113,7 +104,7 @@
                     </tr>
                 @endforeach
             </table>
-            {{ $products->links() }}
+            {!! $products->links() !!}
         </main>
         <!-- Main Content End -->
 

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Providers;
+use Illuminate\Pagination\Paginator;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Blade;
@@ -28,6 +29,8 @@ class AppServiceProvider extends ServiceProvider
         // Blade::component('x-guest-layout', \App\View\Components\GuestLayout::class);
         // Blade::component('x-auth-session-status', \App\View\Components\AppLayout::class);
         Blade::component('application-logo', ApplicationLogo::class);
+        Paginator::useBootstrap();
         //
     }
+    
 }
