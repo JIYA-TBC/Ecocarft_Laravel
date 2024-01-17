@@ -1,40 +1,48 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Laravel 8 CRUD Application - laravelcode.com</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+
     <style>
         nav svg {
             height: 20px;
         }
+
         nav .hidden {
             display: block !important;
         }
-        .sclist{
-            list-style:none;
+
+        .sclist {
+            list-style: none;
         }
-        .sclist li{
+
+        .sclist li {
             line-height: 33px;
             border-bottom: 1px solid #ccc;
         }
-        .slink i{
-            font-size:17px;
+
+        .slink i {
+            font-size: 17px;
             margin-left: 13px;
         }
     </style>
 </head>
+
 <body>
 
 
-<br>
+    <br>
 
-<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-    @csrf
-</form>
-<br>
-<div class="container">
-    @yield('content')
-</div>
-   
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+        @csrf
+    </form>
+    <br>
+    <div class="container">
+        @yield('content')
+    </div>
+
 </body>
+
 </html>

@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 
@@ -24,22 +23,22 @@ class ManageUsersController extends Controller
     public function destroy($id)
     {
         $users = User::find($id);
-        $users->delete();  
+        $users->delete();
         return redirect()->route('superadmin.users')
-        ->with('success','User Deleted successfully.');
+            ->with('success', 'User Deleted successfully.');
     }
-    
+
     public function update(Request $request, $id)
-{
-    $request->validate([ 
-        'utype' => 'required',
-    ]);
+    {
+        $request->validate([
+            'utype' => 'required',
+        ]);
 
-    $user = User::find($id);
-    $user->utype = $request->utype;    
-    $user->save();
+        $user = User::find($id);
+        $user->utype = $request->utype;
+        $user->save();
 
-    return redirect()->route('superadmin.users')->with('success', 'User updated successfully.');
-}
+        return redirect()->route('superadmin.users')->with('success', 'User updated successfully.');
+    }
 
 }

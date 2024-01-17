@@ -98,13 +98,56 @@
             <img src="{{ asset('images') }}/{{ $product->image }}" class="card-img-top img-fluid" alt="{{ $product->name }}" style="margin-top: 4rem; margin-left: 4rem; height: 400px; width: 500px;">
         </div>
         <div class="col-12 col-sm-6 " >
-            <div class="card-body" style="margin-top: 4rem; margin-left: 4rem;">
-                <h5 style="font-size: 3rem; font-family: 'YourFont', sans-serif;" class="card-title text-uppercase">{{ $product->name }}</h5>
-                <p class="card-text">Price: ${{ $product->price }}</p>
-                <p class="card-text"><small class="text-body-secondary">Description: {{ $product->description }}</small></p>
-                <a href="#" style="font-size: 1rem; font-family: 'YourFont', sans-serif;" class="btn text-uppercase text-dark">Add to Cart</a>
-            </div>
+        <div class="card-body" style="margin-top: 4rem; margin-left: 4rem;">
+    <h5 style="font-size: 3rem; font-family: 'YourFont', sans-serif;" class="card-title text-uppercase">{{ $product->name }}</h5>
+    <p class="card-text">Price: ${{ $product->price }}</p>
+    <p class="card-text"><small class="text-body-secondary">Description: {{ $product->description }}</small></p>
+
+    <div class="card-text">
+        <form action="{{ route('payment')}}" method="post">
+            @csrf
+            <input type="hidden" name="amount" id="amount{{ $product->price }}" value="{{ $product->price }}">
+            <button type="submit" style="font-size: 1rem; font-family: 'YourFont', sans-serif; font-weight: normal;" class="btn text-uppercase text-dark">Buy Now</button>
+        </form>
+    </div>
+
+    <p class="card-text">
+        <div>
+            Average Rating:
+            @for($i = 1; $i <= 5; $i++)
+                @if($i <= 3) <!-- Adjust the number of stars based on your desired average rating -->
+                    ⭐️
+                @else
+                    ☆
+                @endif
+            @endfor
         </div>
+    </p>
+
+    <p class="card-text">
+        <!-- Static stars for individual reviews -->
+        <div>
+            Rating:
+            @for($i = 1; $i <= 5; $i++)
+                @if($i <= 4) <!-- Adjust the number of stars for each review -->
+                    ⭐️
+                @else
+                    ☆
+                @endif
+            @endfor
+            </div>
+    </p>
+            <p class="card-text">
+        <!-- Static stars for individual reviews -->
+        <div>
+            Comment: This is a sample review comment.
+        </div>
+    </p>
+</div>
+
+</div>
+
+
         </div>
         </div>
      <!-- Product details ends -->

@@ -18,7 +18,7 @@ class AdminMiddleware
     public function handle(Request $request, Closure $next)
     {
         if(Auth::check()){
-            if(Auth::user()->utype == 1 || Auth::user()->utype == 2) // 1 for admin and 0 for user
+            if(Auth::user()->utype == 1 || Auth::user()->utype == 2) // 1 for admin and 0 for user and 2 for super admin
             {
                 return $next($request);
             } 

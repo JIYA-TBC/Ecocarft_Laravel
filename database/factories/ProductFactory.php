@@ -18,7 +18,7 @@ class ProductFactory extends Factory
         $product_name = $this->faker->unique()->words($nb=2, $asText=true);
         $categories = ['Skin care', 'Arts', 'Hair Care'];
 
-        return [
+        return [ 
             'name' => $product_name,
             'description' => $this->faker->text(50),
             'price' => $this->faker->numberBetween(10, 500),

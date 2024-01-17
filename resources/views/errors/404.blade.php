@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -58,15 +59,19 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="error-container">
             <!-- Add your cartoon image here -->
-            <img style="width: 400px; height: 400px;" src="{{ asset('front/img/404.png') }}" alt="Cartoon Image" class="cartoon-image">
-            
-            <div class="error-message">Oops! Something is wrong.</div>
-            <a href="/" class="home-btn">Go back to Home</a>
+            <img style="width: 400px; height: 400px;" src="{{ asset('front/img/404.png') }}" alt="Cartoon Image"
+                class="cartoon-image">
+            <div class="error-message">
+                <h3>You cannot access this page. </h3>
+            </div>
+            <a href="../admin/products" class="home-btn">Go back to Home</a>
         </div>
     </div>
 </body>
+
 </html>

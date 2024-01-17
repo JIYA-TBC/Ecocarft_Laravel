@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product;
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 
@@ -17,7 +16,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::orderBy('id', 'desc')->paginate(5);
+        $products = Product::orderBy('id', 'desc')->paginate(9);
         return response()->view('admin.products.index', compact('products'));
     }
 
@@ -25,7 +24,7 @@ class ProductController extends Controller
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
-     */ 
+     */
 
 
     public function create()
@@ -47,18 +46,18 @@ class ProductController extends Controller
             'description' => 'required',
             'price' => 'required',
         ]);
-    
+
         $products = new Product;
         $products->name = $request->name;
         $products->description = $request->description;
         $products->price = $request->price;
         $products->category = $request->category;
-        $imageName = Carbon::now()->timestamp. '.' . $request->image->extension();
+        $imageName = Carbon::now()->timestamp . '.' . $request->image->extension();
         $request->image->move(public_path('images'), $imageName);
         $products->image = $imageName;
         $products->save();
         return redirect()->route('products.index')
-                            ->with('success','products created successfully.');
+            ->with('success products created successfully.');
     }
 
     public function search()
@@ -92,10 +91,10 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        return view('admin.products.edit',compact('product'));
+        return view('admin.products.edit', compact('product'));
     }
 
- 
+
 
     /**
      * Update the specified resource in storage.
@@ -112,18 +111,18 @@ class ProductController extends Controller
             'price' => 'required',
 
         ]);
-    
+
         $products = Product::find($id);
         $products->name = $request->name;
         $products->description = $request->description;
         $products->price = $request->price;
         $products->category = $request->category;
-        $imageName = Carbon::now()->timestamp. '.' . $request->image->extension();
+        $imageName = Carbon::now()->timestamp . '.' . $request->image->extension();
         $request->image->move(public_path('images'), $imageName);
         $products->image = $imageName;
         $products->save();
         return redirect()->route('products.index')
-        ->with('success','product Updated successfully.');
+            ->with('success', 'product Updated successfully.');
     }
 
     /**
@@ -135,8 +134,8 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $products = Product::find($id);
-        $products->delete();  
+        $products->delete();
         return redirect()->route('products.index')
-        ->with('success','Products Deleted successfully.');
+            ->with('success', 'Products Deleted successfully.');
     }
 }

@@ -1,54 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>ECOCRAFT</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
-    <!-- Font Awesome (for icons) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <!-- @extends('front.layout.top') -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap JavaScript and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.6.0/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+
+        .row {
+            margin-top: 5rem;
+            padding: 20px;
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
 </head>
+
 <body>
 
-<div class="container-fluid">
-    <div class="row">
-        <!-- Sidebar Start -->
-        <nav class="col-lg-3 col-md-4 col-sm-12 bg-dark text-white py-3">
-            <div class="text-center">
-                <h1 class="m-0 text-uppercase"><i class="fa fa-leaf fs-1 text-success me-3"></i>ECOCRAFT</h1>
-                <h1 class="m-0 text-uppercase d-none d-lg-block">Dashboard</h1>
-            </div>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a href="/" class="navbar-brand">
+            <h1 class="m-0 text-uppercase text-white">
+                <img src="{{ asset('front/img/logo2.png') }}" alt="ECOCRAFT Logo" class="logo-img me-3"
+                    style="height:50px;">
+                ECOCRAFT
+            </h1>
+        </a>
 
-            <!-- Navigation Links -->
-            <ul class="nav flex-column">
-                <!-- Logout Link -->
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                        <i class="fa fa-power-off"></i> Logout
-                    </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
-                </li>
-            </ul>
-        </nav>
-        <!-- Sidebar End -->
+        <!-- Toggle button for smaller screens -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-        <!-- Page Content Start -->
-        <div class="col-lg-9 col-md-8 col-sm-12">
-            <!-- Your content goes here -->
-            <div class="container">
-                <!-- Add your content here -->
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto mx-lg-auto py-0 d-md-flex">
+                <!-- <a href="/" class="nav-item nav-link active">Home</a> -->
+                <a href="{{route('superadmin.users')}}" class="nav-item nav-link">Manage</a>
+                <!-- Add space between Manage and Logout -->
+                <div class="mx-2"></div>
+                <a class="nav-link" href="{{ route('logout') }}"
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <i class="fa fa-power-off"></i> Logout
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
             </div>
         </div>
-        <!-- Page Content End -->
+
+        <!-- Bootstrap 5 requires Bootstrap JavaScript and Popper.js -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    </nav>
+    <div class="container">
+        @yield('content')
     </div>
-</div>
-
-<!-- Bootstrap JS (Optional) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.1/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.min.js"></script>
-
 </body>
+
 </html>
